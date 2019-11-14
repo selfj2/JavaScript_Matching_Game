@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Memory Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <h1>Michigan Snack Attack Match</h1>
+
+        <section class="memory-game">
+
+            <div class="memory-card">
+                <img class="back-face"src="images/michigan.png" />
+                <img class="front-face" src="images/vernors.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png"/>
+                <img class="front-face" src="images/vernors.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/better_made.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/better_made.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/faygo.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/faygo.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/coney_dog.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/coney_dog.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/cider_donuts.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/cider_donuts.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face" src="images/michigan.png" />
+                <img class="front-face" src="images/fudge.png" />
+            </div>
+
+            <div class="memory-card">
+                <img class="back-face"src="images/michigan.png" />
+                <img class="front-face" src="images/fudge.png" />
+            </div>
+
+        </section>
+
+        <section class="button">
+            <button class="start" onclick="startGame()">Start</button>
+
+            <button id="restart" class="reset" onclick="resetGame()">Restart</button>
+        </section>
+
+        <section class="timer-container">
+            <div id="myCounter" class="timer"></div>
+        </section>
+
+    </div> 
+
+    <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <p>You ate all the snacks!</p>
+                <button class="tryAgain" onclick="resetGame(), modalWindowClose()">I'm still hungry</button>
+                <button class="quit" onclick="modalWindowClose()">I'm full</button>
+            </div>
+
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

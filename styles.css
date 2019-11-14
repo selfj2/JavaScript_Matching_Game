@@ -1,0 +1,698 @@
+*, 
+html, 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    background-image: url("images/bridge.jpeg");
+    background-size: cover;
+    background-position: top;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+}
+
+.memory-game {
+    width: 80%;
+    background: rgb(12, 0, 103, .5);
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 33px -3px rgba(0,0,0,0.62);
+    -moz-box-shadow: 0px 0px 33px -3px rgba(0,0,0,0.62);
+    box-shadow: 0px 0px 33px -3px rgba(0,0,0,0.62);
+}
+
+.memory-card {
+    margin: 10px;
+    border-radius: 10px;
+    border-collapse: separate;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.front-face, 
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.button {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 85%;
+    padding: 20px;
+}
+
+.start, .reset {
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(12, 0, 103, .5));
+    font-size: .5rem;
+    width: 75px;
+    height: 20px;
+    margin: 20px;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    position: relative;
+    top: -40px;
+}
+
+#myCounter {
+    color: white;
+    margin: 20px;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+/* card flipping */
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+
+ /* Modal section/popup window */
+ .modal{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 20px;
+    margin: 30% auto;
+    padding: 10%;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+.tryAgain, .quit {
+    background: rgb(12, 0, 103);
+    color: white;
+    font-size: .5rem;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+/* media queries for phones and tablets*/
+/* portrait */
+@media only screen and (min-device-width: 320px) and (orientation: portrait) {
+    h1 {
+        font-size: 1.25rem;
+        padding: 20px;
+    }
+
+    .memory-card {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    #myCounter {
+        font-size: .75rem;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-device-width: 375px) and (orientation: portrait) {
+    .memory-card {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    #myCounter {
+        font-size: 1rem;
+    }
+
+    .modal {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-device-width: 397px) and (orientation: portrait) {
+    .modal {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-device-width: 411px) and (orientation: portrait) {
+    .memory-card {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media only screen and (min-device-width: 414px) and (orientation: portrait) {
+    .memory-card {
+        width: 5.25rem;
+        height: 5.25rem;
+    }
+}
+
+@media only screen and (min-device-width: 419px) and (orientation: portrait) {
+    .modal {
+        width: 85%;
+    }
+}
+
+@media only screen and (min-device-width: 444px) and (orientation: portrait) {
+    .modal {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 467px) and (orientation: portrait) {
+    .modal {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 472px) and (orientation: portrait) {
+    .modal {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-device-width: 503px) and (orientation: portrait) {
+    .modal {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-device-width: 520px) and (orientation: portrait) {
+    .memory-game {
+        width: 75%;
+    }
+
+    .memory-card {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+@media only screen and (min-device-width: 539px) and (orientation: portrait) {
+    .modal {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-device-width: 576px) and (orientation: portrait) {
+    .memory-game {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-device-width: 580px) and (orientation: portrait) {
+    .memory-game {
+        width: 70%;
+    }
+    
+    .modal {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-device-width: 618px) and (orientation: portrait) {
+    .memory-game {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-device-width: 629px) and (orientation: portrait) {
+    .modal {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-device-width: 686px) and (orientation: portrait) {
+    .modal {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-device-width: 754px) and (orientation: portrait) {
+    .modal {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-device-width: 831px) and (orientation: portrait) {
+    .memory-game {
+        width: 65%;
+    }
+
+    .memory-card {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+@media only screen and (min-device-width: 838px) and (orientation: portrait) {
+    .modal {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-device-width: 858px) and (orientation: portrait) {
+   .memory-game {
+       width: 60%;
+   }
+
+   .memory-card {
+       width: 6rem;
+       height: 6rem;
+   }
+}
+
+ @media only screen and (min-device-width: 943px) and (orientation: portrait) {
+    .modal {
+        width: 35%;
+    }
+ }
+
+ @media only screen and (min-device-width: 953px) and (orientation: portrait) {
+    .modal {
+        width: 30%;
+    }
+ }
+
+ @media only screen and (min-device-width: 967px) and (orientation: portrait) {
+    .memory-game {
+        width: 55%;
+    }
+ }
+
+ @media only screen and (min-device-width: 1055px) and (orientation: portrait) {
+    .memory-game {
+        width: 50%;
+    }
+ }
+
+ @media only screen and (min-device-width: 1160px) and (orientation: portrait) {
+    .memory-game {
+        width: 45%;
+    }
+ }
+
+
+/* landscape */
+@media only screen and (min-device-width: 568px) and (orientation: landscape) {
+    h1 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+     .memory-game {
+        width: 85%;
+    }
+
+    .memory-card {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .button {
+        padding: 10px;
+    }
+
+    .modal {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (min-device-width: 601px) and (orientation: landscape) {
+    .memory-game {
+        width: 63%;
+    }
+
+    .memory-card {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-device-width: 640px) and (orientation: landscape) {
+    .memory-game {
+        width: 80%;
+    }
+
+    .memory-card {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .tryAgain, .quit {
+        font-size: .75rem;
+        margin-top: 20px;
+        width: 125px;
+        height: 30px;
+    }
+}
+
+@media only screen and (min-device-width: 647px) and (orientation: landscape) {
+    .memory-game {
+        width: 64%;
+    }
+}
+
+@media only screen and (min-device-width: 657px) and (orientation: landscape) {
+    .memory-game {
+        width: 63%;
+    }
+}
+
+@media only screen and (min-device-width: 667px) and (orientation: landscape) {
+    .memory-game {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 678px) and (orientation: landscape) {
+    .memory-game {
+        width: 61%;
+    }
+}
+
+@media only screen and (min-device-width: 689px) and (orientation: landscape) {
+    .memory-game {
+        width: 60%;
+    }
+
+    .modal {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-device-width: 700px) and (orientation: landscape) {
+    .memory-game {
+        width: 59%;
+    }
+}
+
+@media only screen and (min-device-width: 712px) and (orientation: landscape) {
+    .memory-game {
+        width: 58%;
+    }
+}
+
+@media only screen and (min-device-width: 725px) and (orientation: landscape) {
+    .memory-game {
+        width: 57%;
+    }
+}
+
+@media only screen and (min-device-width: 731px) and (orientation: landscape) {
+    .memory-game {
+        width: 80%;
+    }
+
+    .memory-card {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+@media only screen and (min-device-width: 812px) and (orientation: landscape) {
+    .memory-game {
+        width: 80%;
+    }
+
+    .memory-card {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .modal {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-device-width: 823px) and (orientation: landscape) {
+    .memory-game {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 910px) and (orientation: landscape) {
+    .memory-game {
+        width: 54%;
+    }
+
+    .modal {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-device-width: 926px) and (orientation: landscape) {
+    .memory-game {
+        width: 53%;
+    }
+
+    .modal {
+        width: 40%;
+    }
+
+    p {
+        font-size: 1.55rem;
+    }
+    
+}
+
+@media only screen and (min-device-width: 944px) and (orientation: landscape) {
+    .memory-game {
+        width: 52%;
+    }
+}
+
+@media only screen and (min-device-width: 962px) and (orientation: landscape) {
+    .memory-game {
+        width: 51%;
+    }
+
+    .memory-card {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (orientation: landscape) {
+    .memory-game {
+        width: 50%;
+    }
+
+    .memory-card {
+        width: 6rem;
+        height: 6rem;
+    }
+    .start, .reset {
+        font-size: 1rem;
+        width: 100px;
+        height: 30px;
+    }
+}
+
+@media only screen and (min-device-width: 1160px) and (orientation: landscape) {
+    .memory-game {
+        width: 49%;
+    }
+
+    .modal {
+        width: 35%;
+    }
+}
+
+@media only screen and (min-device-width: 1184px) and (orientation: landscape) {
+    .memory-game {
+        width: 48%;
+    }
+}
+
+@media only screen and (min-device-width: 1209px) and (orientation: landscape) {
+    .memory-game {
+        width: 47%;
+    }
+}
+
+@media only screen and (min-device-width: 1235px) and (orientation: landscape) {
+    .memory-game {
+        width: 46%;
+    }
+
+    .memory-card {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+}
+
+/* @media only screen and (min-device-width: 1280px) and (orientation: landscape) {
+} */
+
+@media only screen and (min-device-width: 1348px) and (orientation: landscape) {
+    .memory-game {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-device-width: 1366px) and (orientation: landscape) {
+    .memory-game {
+        width: 44%;
+    }
+
+    .button {
+        padding: 30px;
+    }
+
+    .start, .reset {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-device-width: 1410px) and (orientation: landscape) {
+    .memory-game {
+        width: 43%;
+    }
+}
+
+@media only screen and (min-device-width: 1442px) and (orientation: landscape) {
+    .memory-game {
+        width: 42%;
+    }
+}
+
+@media only screen and (min-device-width: 1477px) and (orientation: landscape) {
+    .memory-game {
+        width: 41%;
+    }
+}
+
+@media only screen and (min-device-width: 1513px) and (orientation: landscape) {
+    .memory-game {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-device-width: 1550px) and (orientation: landscape) {
+    .memory-game {
+        width: 39%;
+    }
+
+    .memory-card {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .modal {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-device-width: 1693px) and (orientation: landscape) {
+    .memory-game {
+        width: 38%;
+    }
+
+    .memory-card {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (min-device-width: 1737px) and (orientation: landscape) {
+    .memory-game {
+        width: 36%;
+    }
+
+    .memory-card {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+}
+
+@media only screen and (min-device-width: 1920px) {
+    .memory-game {
+        width: 35%;
+    }
+
+<<<<<<< HEAD
+    .memory-card {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    p {
+        font-size: 1.7rem;
+    }
+
+=======
+}
+@media only screen and (max-width: 320px) {
+    
+>>>>>>> da650d65687bcb5de37a2adf9a17137c5fb2702a
+}
